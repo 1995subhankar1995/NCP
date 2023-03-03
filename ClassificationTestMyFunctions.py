@@ -1,7 +1,7 @@
 import torch
 from CP.Classification import SplitCP
 from ResNet import ResNet
-import Score_Functions as scores
+from typing import List
 
 import gc
 import numpy as np
