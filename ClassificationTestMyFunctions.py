@@ -25,7 +25,7 @@ stdoutOrigin=sys.stdout
 
 parser = argparse.ArgumentParser(description='Experiments')
 parser.add_argument('-a', '--alpha', default=0.1, type=float, help='Desired nominal marginal coverage')
-parser.add_argument('-s', '--splits', default=5, type=int, help='Number of experiments to estimate coverage')
+parser.add_argument('-s', '--splits', default = 10, type=int, help='Number of experiments to estimate coverage')
 parser.add_argument('--dataset', default='CIFAR100', type=str, help='Dataset to be used: CIFAR100, CIFAR10, ImageNet')
 parser.add_argument('--batch_size', default=1024, type=int, help='Number of images to send to gpu at once')
 parser.add_argument('--coverage_on_label', action='store_true', help='True for getting coverage and size for each label')
