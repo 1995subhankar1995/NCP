@@ -163,20 +163,6 @@ def TestMyFunctions(args):
 
 
     CalibrationScores = ['APS']
-    scores_list = []
-    for score in CalibrationScores:
-        if score == 'HPS':
-            scores_list.append(scores.class_probability_score)
-        elif score == 'APS':
-            scores_list.append(scores.generalized_inverse_quantile_score)
-        elif score == 'RAPS':
-            scores_list.append(scores.rank_regularized_score)
-        else:
-            print("Undefined score function")
-            exit(1)
-    print(f"scores_list = {scores_list}")
-
-
 
     path = './Results/Dataset_' + str(args.dataset) + '/alpha_' + str(args.alpha) 
     if not os.path.exists(path):
