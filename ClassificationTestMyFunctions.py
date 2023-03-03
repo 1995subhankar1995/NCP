@@ -1,7 +1,6 @@
 import torch
 from CP.Classification import SplitCP
 from ResNet import ResNet
-from utils import get_scores, get_normalize_layer, calibration, prediction, evaluate_predictions
 import Score_Functions as scores
 
 import gc
@@ -50,7 +49,40 @@ def Find_Acc(device, model, TorchLoader, n_test):
             CorrectSum += torch.sum(pred_labels == labels)
     return (CorrectSum/n_test)*100
 
+_CIFAR10_MEAN = [0.4914, 0.4822, 0.4465]
+_CIFAR10_STDDEV = [0.2023, 0.1994, 0.2010]
 
+class NormalizeLayer(torch.nn.Module):
+    """Standardize the channels of a batch of images by subtracting the dataset mean
+      and dividing by the dataset standard deviation.
+      In order to certify radii in original coordinates rather than standardized coordinates, we
+      add the Gaussian noise _before_ standardizing, which is why we have standardization be the first
+      layer of the classifier rather than as a part of preprocessing as is typical.
+      """
+
+    def __init__(self, means: List[float], sds: List[float]):
+        """
+        :param means: the channel means
+        :param sds: the channel standard deviations
+        """
+        super(NormalizeLayer, self).__init__()
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        self.means = torch.tensor(means).to(device)
+        self.sds = torch.tensor(sds).to(device)
+
+    def forward(self, input: torch.tensor):
+        (batch_size, num_channels, height, width) = input.shape
+        means = self.means.repeat((batch_size, height, width, 1)).permute(0, 3, 1, 2)
+        sds = self.sds.repeat((batch_size, height, width, 1)).permute(0, 3, 1, 2)
+        return (input - means) / sds
+
+
+def get_normalize_layer(dataset: str) -> torch.nn.Module:
+    """Return the dataset's normalization layer"""
+    if dataset == "imagenet":
+        return NormalizeLayer(_IMAGENET_MEAN, _IMAGENET_STDDEV)
+    elif dataset == "cifar10":
+        return NormalizeLayer(_CIFAR10_MEAN, _CIFAR10_STDDEV)
 
 def TestMyFunctions(args):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
