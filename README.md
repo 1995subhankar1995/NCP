@@ -7,7 +7,7 @@ The major content of our repo are:
  - `CP/` The main folder containing the python scripts for running the experiments.
  - `checkpoints/` Our pre trained models.
  - `datasets/` A folder that contains the datasets used in our experiments CIFAR10, CIFAR100, Imagenet.
- - `Results/` A folder that contains different csv files from different experiments, used to generate the results in the paper.
+ - `Results/` A folder that contains different files from different experiments.
 
 CP folder contains:
 
