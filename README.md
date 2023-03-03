@@ -4,20 +4,14 @@ This repository contains the code and models necessary to replicate the results 
 
 ## Contents
 The major content of our repo are:
- - `RSCP/` The main folder containing the python scripts for running the experiments.
- - `third_party/` Third-party python scripts imported. Specifically we make use of the SMOOTHADV attack by [Salman et al (2019)](https://github.com/Hadisalman/smoothing-adversarial)
- - `Create_Figures/` Python scripts for creating all the figures in the paper. The /Create_Figures/Figures subfolder contains the figures themselves.
- - `Arcitectures/` Architectures for our trained models.
- - `Pretrained models/` Cohen pretrained models. [Cohen et al (2019)](https://github.com/locuslab/smoothing)
+ - `CP/` The main folder containing the python scripts for running the experiments.
  - `checkpoints/` Our pre trained models.
  - `datasets/` A folder that contains the datasets used in our experiments CIFAR10, CIFAR100, Imagenet.
  - `Results/` A folder that contains different csv files from different experiments, used to generate the results in the paper.
 
-RSCP folder contains:
+CP folder contains:
 
-1. `RSCP_exp.py`: the main code for running experiments.
-2. `Score_Functions.py`: containing all non-conformity scores used.
-3. `utills.py`: calibration and predictions functions, as well as other function used in the main code.
+1. `Classification.py`: the main code for running experiments.
 
 ## Prerequisites
 
@@ -46,10 +40,9 @@ conda install -c conda-forge pandas
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install -c conda-forge plotnine
 ```
-2. 
-   1. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to Project_RSCP/checkpoints/.
+2. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to Project_RSCP/checkpoints/.
 
-3. The current working directory when running the scripts should be the top folder NCP.
+3. The current working directory when running the scripts should be the folder NCP.
 
 
 To reproduce the results for CIFAR10:
