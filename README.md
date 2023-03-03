@@ -1,6 +1,6 @@
 # NCP (Neighborhood Conformal Prediction)
 This repository contains the code and models necessary to replicate the results of our recent paper:
-**Neighborhood Conformal Prediction** <br>
+**Improving Uncertainty Quantification of Deep Classifiers via Neighborhood Conformal Prediction: Novel Algorithm and Theoretical Analysis** <br>
 
 ## Contents
 The major content of our repo are:
