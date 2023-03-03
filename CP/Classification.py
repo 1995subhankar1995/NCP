@@ -477,6 +477,24 @@ class SplitCP():
 
         return thresholds
 
+        def prediction_ProbabilisticLCP(self, scores_simple=None, thresholds=None, Regularization = False):
+        n = scores_simple.shape[1]
+        predicted_sets = []
+
+        if Regularization:
+            ScoresList = ['APS']
+        else:
+            ScoresList = self.ScoresList
+
+        for p in range(len(ScoresList)):
+            S_hat_simple = [np.where(scores_simple[p, i, :] <= thresholds[p, i])[0].tolist() for i in range(n)]
+            # No empty set is allowed
+            for k in range(len(S_hat_simple)):
+                if len(S_hat_simple[k]) == 0:
+                    S_hat_simple[k] = [np.argsort(scores_simple[p, k, :])[0]]
+            predicted_sets.append(S_hat_simple)
+    
+        return predicted_sets
 
     def HypertuningBothLamdas(self, fx_test, idx_hyper, idx_cal, scores_simple_clean_test, y_test, ):
 
