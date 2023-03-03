@@ -90,6 +90,7 @@ def TestMyFunctions(args):
     # load datasets
     if args.dataset == "CIFAR10":
         # Load train set
+        
         train_dataset = torchvision.datasets.CIFAR10(root='./datasets/',
                                                     train=True,
                                                     transform=torchvision.transforms.ToTensor(),
@@ -111,6 +112,7 @@ def TestMyFunctions(args):
         model = torch.nn.Sequential(normalize_layer, model)
         model.load_state_dict(state['state_dict'])
     elif args.dataset == "CIFAR100":
+        args.splits = 5
         # Load train set
         train_dataset = torchvision.datasets.CIFAR100(root='./datasets/',
                                                     train=True,
