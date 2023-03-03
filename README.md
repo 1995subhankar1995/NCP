@@ -40,7 +40,7 @@ conda install -c conda-forge pandas
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install -c conda-forge plotnine
 ```
-2. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to Project_RSCP/checkpoints/.
+2. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to NCP/checkpoints/.
 
 3. The current working directory when running the scripts should be the folder NCP.
 
