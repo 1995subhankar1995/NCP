@@ -105,7 +105,7 @@ def TestMyFunctions(args):
         
         n_test = 10000
         num_of_classes = 10
-        model_path = './CIFAR10_ResNet110_Robust_sigma_0.0.pth.tar'
+        model_path = './checkpoints/CIFAR10_ResNet110_Robust_sigma_0.0.pth.tar'
         model = ResNet(depth=110, num_classes=num_of_classes)
         state = torch.load(model_path, map_location=device)
         normalize_layer = get_normalize_layer("cifar10")
@@ -128,7 +128,7 @@ def TestMyFunctions(args):
 
         n_test = 10000
         num_of_classes = 100
-        model_path = './ResNet110_Robust_sigma_0.0.pth.tar' 
+        model_path = './checkpoints/ResNet110_Robust_sigma_0.0.pth.tar' 
         model = ResNet(depth=110, num_classes=num_of_classes)
         state = torch.load(model_path, map_location=device)
         normalize_layer = get_normalize_layer("cifar10")
