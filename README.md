@@ -48,11 +48,8 @@ conda install -c conda-forge plotnine
 ```
 2. 
    1. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to Project_RSCP/checkpoints/.
-   2. Download cohen models from [here](https://drive.google.com/file/d/1h_TpbXm5haY5f-l4--IKylmdz6tvPoR4/view) and extract them to Project_RSCP/Pretrained_Models/. Change the name of "models" folder to "Cohen".
-   3. If you want to run ImageNet experiments, obtain a copy of ImageNet ILSVRC2012 validation set and preprocess the val directory by running [this script](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh). Put the created folders in Project_RSCP/datasets/imagenet/. 
-   4. Optional: download our pre created adversarial examples from [here](https://technionmail-my.sharepoint.com/:f:/g/personal/asafgendler_campus_technion_ac_il/Es1JTaMEdMZEhG480b_qjcYBo6znBVS5FKrOewMjVw0NNw?e=hcbkag) and extract them to Project_RSCP/Adversarial_Examples/.
 
-3. The current working directory when running the scripts should be the top folder RSCP.
+3. The current working directory when running the scripts should be the top folder NCP.
 
 
 To reproduce the results for CIFAR10:
