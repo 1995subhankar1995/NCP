@@ -29,7 +29,7 @@ parser.add_argument('-s', '--splits', default = 10, type=int, help='Number of ex
 parser.add_argument('--dataset', default='CIFAR100', type=str, help='Dataset to be used: CIFAR100, CIFAR10, ImageNet')
 parser.add_argument('--batch_size', default=1024, type=int, help='Number of images to send to gpu at once')
 parser.add_argument('--coverage_on_label', action='store_true', help='True for getting coverage and size for each label')
-parser.add_argument('-PS', '--PlatScale', default = True, action=argparse.BooleanOptionalAction, help='True for getting coverage and size for each label')
+parser.add_argument('-PS', '--PlatScale', default = True, action=argparse.BooleanOptionalAction, help='We want to apply temperature scaling before softmax layers')
 parser.add_argument('--seed', metavar='SEED', help='random seed', default=0)
 
 args = parser.parse_args()
