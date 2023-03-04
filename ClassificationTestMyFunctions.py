@@ -138,7 +138,7 @@ def TestMyFunctions(args):
 
     elif args.dataset == "ImageNet":
         # get dir of imagenet validation set
-        imagenet_dir = "./imagenet_val"
+        imagenet_dir = "./datasets/imagenet_val"
 
         # ImageNet images pre-processing
         transform = transforms.Compose([
