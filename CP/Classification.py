@@ -477,7 +477,7 @@ class SplitCP():
 
         return thresholds
 
-        def prediction_ProbabilisticLCP(self, scores_simple=None, thresholds=None, Regularization = False):
+    def prediction_ProbabilisticLCP(self, scores_simple=None, thresholds=None, Regularization = False):
         n = scores_simple.shape[1]
         predicted_sets = []
 
