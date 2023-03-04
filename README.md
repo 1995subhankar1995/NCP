@@ -41,7 +41,8 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install -c conda-forge plotnine
 ```
 2. 
-i. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to NCP/checkpoints/.
+i. Download our trained models from [here](https://drive.google.com/drive/folders/1KwkzR7cXc3QWexKjcbUG1-ZWeMqzg5Nl?usp=share_link) and extract them to NCP/checkpoints.
+
 ii. If you want to run ImageNet experiments, obtain a copy of ImageNet ILSVRC2012 validation set from [here](https://berkeley.box.com/shared/static/pouthcomrvxw9hj64oxhacjvqdw3ihlp.gz) and extract the data. Put the created folders in /datasets/.
 
 3. The current working directory when running the scripts should be the folder NCP.
