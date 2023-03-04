@@ -89,6 +89,7 @@ def TestMyFunctions(args):
 
     # load datasets
     if args.dataset == "CIFAR10":
+        args.alpha = 0.04
         # Load train set
         
         train_dataset = torchvision.datasets.CIFAR10(root='./datasets/',
